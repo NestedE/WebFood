@@ -25,6 +25,22 @@ a {
 	text-transform: uppercase;
 }
 
+/* Implement an hamburger icon, click to display side drawer and to make the webfood display to disappear */
+.nav-menu-btn {
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	display: none;
+}
+
+.nav-menu-btn span {
+	width: 100%;
+	height: 0.1875rem;
+	background-color: white;
+}
+
 nav ul {
 	list-style: none;
 	display: flex;
@@ -43,6 +59,47 @@ nav ul {
 
 #main-header nav a:hover {
 	color: rgb(228, 163, 44);
+}
+
+/* side-drawer is whats displayed when the hamburger sign is clicked, when no click event is performed the display will be set to none else the side-drawer:target will be called and displayed */
+#side-drawer {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(29, 26, 27);
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+#side-drawer:target {
+	display: block;
+}
+
+#side-drawer ul {
+	list-style: none;
+	margin: 0;
+	padding: 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#side-drawer li {
+	margin: 1rem 0;
+}
+
+#side-drawer a {
+	color: rgb(253, 239, 213);
+	font-size: 2rem;
+}
+
+#side-drawer #inner-header {
+	height: 5rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 5%;
 }
 
 .content h1 {
@@ -71,6 +128,10 @@ nav ul {
 	overflow: hidden;
 }
 
+.food-item h2 {
+	margin: 0 0 1rem 0;
+}
+
 .food-item img {
 	height: 15rem;
 	width: 100%;
@@ -97,16 +158,22 @@ nav ul {
 using pixels is not a good choice, 
 */
 
+/* font size is set to 1.5 rem, nav elements to go hidden, change the width to rem in media querry */
 @media (max-width: 48rem) {
-	#latest-product ul {
-		grid-template-columns: 100%;
+	#main-header nav {
+		/* visibility: hidden; */
+		display: none;
 	}
+
+	.nav-menu-btn {
+		display: flex;
+	}
+
 	.content h1 {
 		font-size: 1.5rem;
 	}
-	#main-header nav a {
-		visibility: hidden;
+
+	#latest-product ul {
+		grid-template-columns: 100%;
 	}
 }
-
-/* font size is set to 1.5 rem, nav elements to go hidden, change the width to rem in media querry */

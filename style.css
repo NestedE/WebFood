@@ -154,6 +154,51 @@ nav ul {
 	background-color: rgb(221, 134, 34);
 }
 
+footer {
+	background: linear-gradient(70deg, rgb(29, 26, 24), rgb(29, 26, 24));
+	padding: 1.875rem 0;
+}
+
+.container {
+	max-width: 73.125rem;
+	margin: auto;
+	color: rgb(238, 164, 80);
+	font-size: 0.9rem;
+}
+
+.ft-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ft-col p {
+	line-height: 1;
+}
+
+.dots span {
+	margin-right: 0.625rem;
+}
+
+.ft-col ul {
+	display: flex;
+	list-style: none;
+}
+
+.ft-col ul li {
+	margin-right: 1.25rem;
+	position: relative;
+}
+
+.ft-col ul li::after {
+	content: '';
+	position: absolute;
+	background: rgb(238, 164, 80);
+	display: block;
+	height: 2px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
 /* styling responsiveness for the website, to actualize this we will make use of units. 
 using pixels is not a good choice, 
 */
@@ -175,5 +220,29 @@ using pixels is not a good choice,
 
 	#latest-product ul {
 		grid-template-columns: 100%;
+	}
+
+	.ft-row {
+		display: grid;
+		padding-left: 30px;
+	}
+
+	.ft-col ul {
+		display: grid;
+		margin-top: 10px;
+		padding: 0;
+		list-style: none;
+	}
+
+	.ft-col ul li {
+		margin-bottom: 1.25rem;
+	}
+
+	.ft-col ul li::after {
+		width: 20%;
+	}
+
+	.btm-footer {
+		padding-left: 30px;
 	}
 }
